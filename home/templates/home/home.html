@@ -1,0 +1,38 @@
+{% extends 'home/base.html' %}
+
+
+{% block title %}
+    My amazing site
+{% endblock title %}
+
+{% block content %}
+
+   <div id="home" class=" container home">
+        <h1 class="text-warning text-center" style="font-size: 80px; padding-top: 150px;">LOGIN TO SEND MASSAGE ON FORUMXT</h1> -->
+        <button type="button" style="margin-top: 50px;z-index: 1;padding: 10px 125px;" class="d-block mx-auto btn btn-outline-light">Login</button>
+        <button type="button" class="my-3 d-block mx-auto px-5 btn btn-warning">Sign-up</button>  
+        <div id="homewrapper" class="homewrapper">
+
+        </div>
+   </div>
+
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $('.home').mousemove(function(event){
+        let homewrapper = $('homewrapper')
+		var pos = $('.home').offset();
+		var elem_left = pos.left.toFixed(0);
+		var elem_top = pos.top.toFixed(0);
+		var x = event.pageX - elem_left;
+		var y = event.pageY - elem_top;
+
+        
+        document.getElementById("homewrapper").style.left = x - 25 + 'px';
+        document.getElementById("homewrapper").style.top = y - 35 + 'px';
+	});
+</script>   
+{% endblock scripts %}
