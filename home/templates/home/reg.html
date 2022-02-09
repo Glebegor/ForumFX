@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+
+{% block title %}
+    Register
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <form class="text-light formGroup" action="/Register/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" class="btn btn-warning mt-2 w-75 mx-auto" value="Submit">
+    </form>
+</div>
+
+{% endblock content %}
