@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home.views import base, forum, comments, aboutUs, reg
+from home.views import base, forum, comments, aboutUs, reg, login
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,6 +26,7 @@ urlpatterns = [
     path('comments/', comments, ),
     path('aboutUs/', aboutUs, ),
     path('reg/', reg, ),
+    path('login/', login, ),
 ]
 
 

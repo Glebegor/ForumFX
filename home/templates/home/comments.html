@@ -5,19 +5,32 @@
     Comments
 {% endblock title %}
 
+{% block link %}
+<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    <h1>ForumXT</h1>
+
+    <ul class="nav col-12 col-lg-auto mx-lg-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
+      <li><a href="/forum" class="nav-link px-2 text-white">Forum</a></li>
+      <li><a href="/aboutUs" class="nav-link px-2 text-white">About Us</a></li>
+      <li><a href="/comments" class="activeNavlink nav-link px-2 text-white">Comments</a></li>
+    </ul>
+
+    <div class="text-end">
+      <a href="/login"><button type="button" href="" class="btn btn-outline-light me-2">Login</button></a>
+      <a href="/reg"><button type="button" href="" class="btn btn-warning">Sign-up</button></a>
+    </div>
+  </div>
+{% endblock link %}
+
 {% block content %}
 <div class="container" style="min-height: 520px;">
-    <div class="commentsInput pt-5">
-        <div class="titleComent text-warning display-6 text-center mb-5">Comments</div>
-        <input placeholder="Write name" type="text" class="comInputName w-100">
-        <textarea placeholder="Write comment" style="resize: none; height: 100px;" class=" mt-3 w-100" name="" id="" cols="30" rows="10"></textarea>
-        <div class="error my-1 w-100 bg-danger">
-            <div class="errorText">
-                Name mustn't be longer then 4 letters.<br>
-            </div>
-        </div>
-        <button style="border-radius: 10px" class="btn-warning btnComment">Submit</button>
-    </div>
+    <form class="text-light formGroupComm" action="/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <input type="submit" style="width: 6%!important;" class="btn btn-warning mb-5 mt-3 mx-auto" value="Submit">
+    </form>
     <div class="comments">
         <div class="commentItem">
             <div class="comTitle"></div>

@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from .models import register
+from .models import register, comm, loginn
 
 # Create your views here.
 def base(request):
@@ -8,10 +8,6 @@ def base(request):
 
 def forum(request):
     return render(request, 'home/forum.html')
-
-def comments(request):
-    return render(request, 'home/comments.html')
-
 def aboutUs(request):
     return render(request, 'home/aboutUs.html')
     
@@ -20,20 +16,31 @@ def save_page(request):
    Email = request.POST["Email"]
    password = request.POST["password"]
 
+def comments(request):
+    if request.method == 'POST':
+        form = comm(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect('/')
+    else:
+        form = comm()
+    return render(request, 'home/comments.html', {'form': form})
 
 def reg(request):
-    # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
         form = register(request.POST)
-        # check whether it's valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/')    
 
-    # if a GET (or any other method) we'll create a blank form
     else:
         form = register()
     return render(request, 'home/reg.html', {'form': form})
+
+def login(request):
+    if request.method == 'POST':
+        form = loginn(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect('/')    
+
+    else:
+        form = loginn()
+    return render(request, 'home/login.html', {'form': form})

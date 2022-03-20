@@ -2,6 +2,9 @@ body{
     background:white;
 }
 /*header*/
+.activeNavlink{
+    color: #ffc107!important;
+}
 .nav-link{
     transition: .3s;
 }
@@ -17,12 +20,16 @@ body{
     height: 720px;
     /* background: linear-gradient(#212529, #ffc107,#212529); */
 }
+.homewrapper:hover{
+    transition: .3s;
+}
 .homewrapper{
+    transition: .3s;
     left: -250px;
     overflow:hidden;
     background: radial-gradient(#ffc107 , black 70% );
     outline: 2000px solid black;
-    transition: .1s linear;
+    transition: .01s linear;
     position:absolute;
     z-index: -1;
     width: 250px;
@@ -60,7 +67,18 @@ body{
 .ForumText{
     text-align: left;
 }
+/* aboutUs */
+
 /*comments*/
+.formGroupComm{
+    border-bottom: 2px #ffc107 solid;
+    
+}
+#CommentInp{
+    resize:none;
+    height: 10%;
+    width: 80%; 
+}
 .error{
     display: flex;
     align-items: center;
