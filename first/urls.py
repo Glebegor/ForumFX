@@ -19,6 +19,7 @@ from home.views import base, forum, aboutUs, comments, login
 from django.conf import settings
 from users import views as userViews
 from django.conf.urls.static import static
+from django.contrib.auth import views as authViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +27,8 @@ urlpatterns = [
     path('forum/', forum, ),
     path('aboutUs/', aboutUs, ),
     path('comments/', comments),
-    path('login/', login),
+    path('login/',login, name='login'),
+    path('exit/', authViews.LogoutView.as_view(template_name='home/exit.html'), name='exit'),
     path('register/', userViews.register, name='reg')
 ]
 
