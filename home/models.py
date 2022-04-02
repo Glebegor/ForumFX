@@ -1,27 +1,19 @@
 from django.db import models
-from django import forms
+from django.utils import timezone
 from django.contrib.auth.models import User
 
-class register(models.Model):
-    attrs = {
-        "type": "password"
-    }
-    Name = forms.CharField(label='Your name', max_length=100)
-    Email = forms.CharField(label='Your Email', max_length=250)
-    password = forms.CharField(widget=forms.TextInput(attrs=attrs))
 
-class comm(models.Model):
-    attrs = {
-        "type": "password"
-    }
-    CommentInp = forms.CharField(label='', widget=forms.Textarea(attrs={'placeholder':'Write Your Comment','id':'CommentInp'}))
-    avtor = models.ForeignKey(User, on_delete=models.CASCADE)
+class commentsTabl(models.Model):
+    Text = models.TextField(verbose_name='Text')
+    date = models.DateTimeField(default=timezone.now, verbose_name='date')
+    avtor = models.ForeignKey(User, verbose_name='avtor', on_delete=models.CASCADE)
 
-class loginn(forms.Form):
-    attrs = {
-        "type": "password"
-    }
-    Name = forms.CharField(label='Your name', max_length=100)   
-    password = forms.CharField(widget=forms.TextInput(attrs=attrs))
+    def __str__(self):
+        return f'Comment {self.avtor} at {self.date}'
+
+    class Meta:
+        verbose_name = "Comment"
+        verbose_name_plural = "Comments"
+
 
     

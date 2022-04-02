@@ -18,17 +18,17 @@
 
     <div class="text-end">
       <a href="/login"><button type="button" href="" class="btn btn-outline-light me-2">Login</button></a>
-      <a href="/reg"><button type="button" href="" style="opacity: .3;" disabled class="btn btn-warning">Sign-up</button></a>
+      <a href="/register"><button type="button" href="" style="opacity: .3;" disabled class="btn btn-warning">Sign-up</button></a>
     </div>
   </div>
 {% endblock link %}
 
 {% block content %}
 <div class="container">
-    <form class="text-light formGroup" action="/" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" class="btn btn-warning mt-2 w-75 mx-auto" value="Submit">
+    <form class="text-light formGroup" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="btn btn-warning mt-2 w-75 mx-auto" value="Submit">
     </form>
 </div>
 

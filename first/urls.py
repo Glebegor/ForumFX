@@ -15,18 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home.views import base, forum, comments, aboutUs, reg, login
+from home.views import base, forum, aboutUs, comments, login
 from django.conf import settings
+from users import views as userViews
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', base, ),
     path('forum/', forum, ),
-    path('comments/', comments, ),
     path('aboutUs/', aboutUs, ),
-    path('reg/', reg, ),
-    path('login/', login, ),
+    path('comments/', comments),
+    path('login/', login),
+    path('register/', userViews.register, name='reg')
 ]
 
 
