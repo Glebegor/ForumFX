@@ -27,8 +27,9 @@ login
 <div class="container">
     <form class="text-light formGroup" action="/" method="post">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" class="btn btn-warning mt-2 w-75 mx-auto" value="Submit">
+        {{ form.as_p }}
+        <!-- <input type="submit" class="btn btn-warning mt-2 w-75 mx-auto" value="Submit"> -->
+        <button class="btn btn-outline-warning" type="submit">Login</button>
     </form>
 </div>
 
