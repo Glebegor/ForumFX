@@ -19,7 +19,6 @@ def forum(request):
     return render(request, 'home/forum.html')
 def aboutUs(request):
     return render(request, 'home/aboutUs.html')
-
 def comments(request):
     comments = Comment.objects.all()
     form = CommentForm()
@@ -30,7 +29,7 @@ def comments(request):
             comment = form.save(commit=False)
             comment.avtor = request.user
             comment.save() 
-            return HttpResponseRedirect(reverse('comment'))
+            return comment
         else:
             context["form"] = form
             return render(request, "home/comments.html", context)

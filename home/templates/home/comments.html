@@ -29,7 +29,8 @@
         {% csrf_token %}
         {{ form }}
         <br>
-        <input type="submit" style="width: 6%!important;" class="btn btn-warning mb-5 mt-3 mx-auto" value="Submit">
+        <button style="width: 6%!important;" class="btn btn-warning mb-5 mt-3 mx-auto" type="submit">submit</button>
+
     </form>
     <div class="comments text-dark">
         {% for comentPost in comments %}
