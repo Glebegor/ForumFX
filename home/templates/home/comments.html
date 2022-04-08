@@ -32,12 +32,11 @@
         <input type="submit" style="width: 6%!important;" class="btn btn-warning mb-5 mt-3 mx-auto" value="Submit">
     </form>
     <div class="comments text-dark">
-        {% for comentPost in com %}
+        {% for comentPost in comments %}
             <div class="commentItem bg-warning my-3" style="border-radius: 40px; padding: 20px;">
-                <!-- <div class="comImg">{{ comentPost.img }}</div> -->
-                <div style="border-bottom: 3px solid black;" class="comTitle mx-3 my-4">{{ comentPost.avtor }}</div>
-                <div style="" class="comText">{{ comentPost.Text }}</div>    
-                <div style="" class="comDate mx-3 my-4">{{ comentPost.date|date:"d.m.y, Время: h:i" }}</div>    
+                <div style="border-bottom: 3px solid black;" class="comTitle mx-3 my-3">{{ comentPost.avtor }}</div>
+                <div style="" class="comText mx-5">{{ comentPost.Text }}</div>    
+                <div style="" class="comDate mx-3 my-5">{{ comentPost.date|date:"F d, Время: h:i" }}</div>    
             </div>
         {% endfor %}
 

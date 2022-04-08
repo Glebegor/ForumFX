@@ -1,6 +1,8 @@
-from .models import commentsTabl
+from django.forms import ModelForm
+from .models import Comment
 
-class CommentForm(forms.commentsTab):
+# Create your forms here
+class CommentForm(ModelForm):
     class Meta:
-        model = commentsTabl
-        fields = ('Text')
+        model = Comment
+        fields = ("Text",)

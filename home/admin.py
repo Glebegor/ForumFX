@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import commentsTabl
+from .models import Comment
 
-admin.site.register(commentsTabl)
+admin.site.register(Comment)
