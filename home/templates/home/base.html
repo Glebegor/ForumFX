@@ -13,7 +13,25 @@
 <body class="bg-dark">
     <header style="z-index: 100;" class="p-3 bg-dark text-white">
         <div class="container">
-          {% block link %}{% endblock %}
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <h1>ForumXT</h1>
+        
+            <ul class="nav col-12 col-lg-auto mx-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="/" class=" standartLink nav-link px-2 text-white">Home</a></li>
+              <li><a href="/forum" class=" standartLink nav-link px-2 text-white">Forum</a></li>
+              <li><a href="/aboutUs" class=" standartLink nav-link px-2 text-white">About Us</a></li>
+              <li><a href="/comments" class=" standartLink nav-link px-2 text-white">Comments</a></li>
+            </ul>
+            
+            {% if not user.is_authenticated%}
+            <div class="text-end">
+              <a href="/login"><button type="button" href="" class=" standartLink btn btn-outline-light me-2">Login</button></a>
+              <a href="/register"><button type="button" href="" class=" standartLink btn btn-warning">Sign-up</button></a>
+            </div>
+            {% else %}
+              <a href='/profile' style='text-decoration:none; color: white;' class='profileLink'><div class="text-uppercase">{{ request.user}}</div></a>
+            {% endif %}
+        </div>
         </div>
       </header>
 
@@ -61,7 +79,11 @@
         </div>
         <!-- Copyright -->
       </footer>
+      
       {% block scripts %}
       {% endblock scripts %}
+      <script>
+        
+      </script>
 </body>
 </html>

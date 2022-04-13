@@ -8,9 +8,11 @@
 {% block content %}
 
    <div id="home" class=" container home">
-        <h1 class="text-warning text-center" style="font-size: 80px; padding-top: 150px;">LOGIN TO SEND MASSAGE ON FORUMXT</h1> -->
-        <a href="/login" style="text-decoration: none;"><button type="button" style="font-size: 40px; margin-top: 50px;z-index: 1;padding: 10px 175px;" class=" d-block mx-auto btn btn-outline-light">Login</button></a>
-        <a href="/reg" style="text-decoration: none;"><button type="button" style="font-size: 40px; padding: 20px 100px;" class="my-3 d-block mx-auto btn btn-warning">Sign-up</button></a>
+    <h1 class="text-warning text-left" style="font-size: 24px; padding-top: 150px;">Your Name:</h1>
+    <h5 class="text-light text-left" style="">{{ request.user }}</h1>
+    <h1 class="text-warning text-left" style="font-size: 24px;">Your Email:</h1>
+    <h5 class="text-light text-left" style="">{{ request.user.email }}</h1>   
+
         <div id="homewrapper" class="homewrapper">
 
         </div>

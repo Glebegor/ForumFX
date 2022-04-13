@@ -35,3 +35,5 @@ def comments(request):
              return render(request, "home/comments.html", context)
      else:
          return render(request, "home/comments.html", context)
+def profileUser(request):
+    return render(request, "home/profile.html")

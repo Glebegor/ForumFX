@@ -11,6 +11,12 @@ body{
 .nav-link:hover{
     color: #ffc107!important;
 }
+.profileLink{
+    transition: 0.3s;
+}
+.profileLink:hover{
+    color: grey;
+}
 /*home*/
 .home>button{
     font-size: 35px;
