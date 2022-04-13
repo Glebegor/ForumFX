@@ -1,0 +1,89 @@
+{% extends 'home/base.html' %}
+
+
+{% block title %}
+    Forum
+{% endblock title %}
+
+{% block link %}
+<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    <h1>ForumXT</h1>
+
+    <ul class="nav col-12 col-lg-auto mx-lg-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
+      <li><a href="/forum" class="activeNavlink nav-link px-2 text-white">Forum</a></li>
+      <li><a href="/aboutUs" class="nav-link px-2 text-white">About Us</a></li>
+      <li><a href="/comments" class="nav-link px-2 text-white">Comments</a></li>
+    </ul>
+
+    <div class="text-end">
+      <a href="/login"><button type="button" href="" class="btn btn-outline-light me-2">Login</button></a>
+      <a href="/register"><button type="button" href="" class="btn btn-warning">Sign-up</button></a>
+    </div>
+  </div>
+{% endblock link %}
+
+{% block content %}
+<div class="forum ">
+    <div class="container">
+        <div class="forumwrap d-flex justify-content-between flex-wrap">
+            <button class="forumItem bg-warning my-4">
+                <img src="https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                <div class="contenForumItem">
+                    <div class="forumtitle">Title</div>
+                    <div class="ForumText"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum quam placeat omnis</div>
+                </div>
+            </button>
+            <button class="forumItem bg-warning my-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzbMkHapbrrywtMI9IMIyIKtkT0s8R2v5ESA&usqp=CAU" alt="">
+                <div class="contenForumItem">
+                    <div class="forumtitle">Title</div>
+                    <div class="ForumText"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum quam placeat omnis</div>
+                </div>
+            </button>
+            <button class="forumItem bg-warning my-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBmBw2Q4YmzGER2JJnw4kVwuyTItq53Y8hdg&usqp=CAU" alt="">
+                <div class="contenForumItem">
+                    <div class="forumtitle">Title</div>
+                    <div class="ForumText"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum quam placeat omnis</div>
+                </div>
+            </button>
+            <button class="forumItem bg-warning my-4">
+                <img src="https://parle.dp.ua/wp-content/uploads/2017/10/pc-topol-img.jpg" alt="">
+                <div class="contenForumItem">
+                    <div class="forumtitle">Title</div>
+                    <div class="ForumText"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum quam placeat omnis</div>
+                </div>
+            </button>
+            <button class="forumItem bg-warning my-4">
+                <img src="https://www.intel.com/content/dam/www/central-libraries/us/en/images/alderlake-mobile-i7-no03-original.png.rendition.intel.web.720.540.png" alt="">
+                <div class="contenForumItem">
+                    <div class="forumtitle">Title</div>
+                    <div class="ForumText"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum quam placeat omnis</div>
+                </div>
+            </button>
+            <button class="forumItem bg-warning my-4">
+                <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2FtaW5nJTIwcGMlMjBzZXR1cHxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
+                <div class="contenForumItem">
+                    <div class="forumtitle">Title</div>
+                    <div class="ForumText"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum quam placeat omnis</div>
+                </div>
+            </button>
+            <button class="forumItem bg-warning my-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNMGIcoEnju_l-lNhdofDTGGkLUkfpx5hswA&usqp=CAU" alt="">
+                <div class="contenForumItem">
+                    <div class="forumtitle">Title</div>
+                    <div class="ForumText"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum quam placeat omnis</div>
+                </div>
+            </button>
+            <button class="forumItem bg-warning my-4">
+                <img src="https://media.istockphoto.com/photos/man-using-desktop-pc-with-blank-screen-picture-id1273870078?b=1&k=20&m=1273870078&s=170667a&w=0&h=pOtNzOAa2wBWTKtEMtSRiBNHdDS7s-BsdQ9YmHfyfMs=" alt="">
+                <div class="contenForumItem">
+                    <div class="forumtitle">Title</div>
+                    <div class="ForumText"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum quam placeat omnis</div>
+                </div>
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock content %}

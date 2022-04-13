@@ -1,0 +1,35 @@
+{% extends 'home/base.html' %}
+
+
+{% block title %}
+    Register
+{% endblock title %}
+
+{% block link %}
+<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    <h1>ForumXT</h1>
+
+    <ul class="nav col-12 col-lg-auto mx-lg-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
+      <li><a href="/forum" class="nav-link px-2 text-white">Forum</a></li>
+      <li><a href="/aboutUs" class="nav-link px-2 text-white">About Us</a></li>
+      <li><a href="/comments" class="nav-link px-2 text-white">Comments</a></li>
+    </ul>
+
+    <div class="text-end">
+      <a href="/login"><button type="button" href="" class="btn btn-outline-light me-2">Login</button></a>
+      <a href="/register"><button type="button" href="" style="opacity: .3;" disabled class="btn btn-warning">Sign-up</button></a>
+    </div>
+  </div>
+{% endblock link %}
+
+{% block content %}
+<div class="container">
+    <form class="text-light formGroup" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="btn btn-warning mt-2 w-75 mx-auto" value="Submit">
+    </form>
+</div>
+
+{% endblock content %}

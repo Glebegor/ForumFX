@@ -1,0 +1,66 @@
+{% extends 'home/base.html' %}
+
+
+{% block title %}
+    Comments
+{% endblock title %}
+
+{% block link %}
+<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    <h1>ForumXT</h1>
+
+    <ul class="nav col-12 col-lg-auto mx-lg-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
+      <li><a href="/forum" class="nav-link px-2 text-white">Forum</a></li>
+      <li><a href="/aboutUs" class="nav-link px-2 text-white">About Us</a></li>
+      <li><a href="/comments" class="activeNavlink nav-link px-2 text-white">Comments</a></li>
+    </ul>
+
+    <div class="text-end">
+      <a href="/login"><button type="button" href="" class="btn btn-outline-light me-2">Login</button></a>
+      <a href="/register"><button type="button" href="" class="btn btn-warning">Sign-up</button></a>
+    </div>
+  </div>
+{% endblock link %}
+
+{% block content %}
+<div class="container" style="min-height: 520px;">
+    <form class="text-light formGroupComm" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <button style="width: 6%!important;" class="btn btn-warning mb-5 mt-3 mx-auto" type="submit">submit</button>
+
+    </form>
+    <div class="comments text-dark">
+        {% for comentPost in comments %}
+            <div class="commentItem bg-warning my-3" style="border-radius: 40px; padding: 20px;">
+                <div style="border-bottom: 3px solid black;" class="comTitle mx-3 my-3">{{ comentPost.avtor }}</div>
+                <div style="" class="comText mx-5">{{ comentPost.Text }}</div>    
+                <div style="" class="comDate mx-3 my-5">{{ comentPost.date|date:"F d, Время: h:i" }}</div>    
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+    
+{% endblock content %}
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('.error').hide()
+        $('.btnComment').on('click', function(){
+            let comments = $('#comments');
+            let comInputName = document.querySelector('.comInputName');
+            if(comInputName.value.length <= 4){
+                $('.error').show()
+                return
+            }
+            if(comInputName.value.length > 4){
+                $('.error').hide()
+                return
+            }
+        })
+    </script>
+{% endblock scripts %}
