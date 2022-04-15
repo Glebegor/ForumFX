@@ -5,16 +5,33 @@
     My amazing site
 {% endblock title %}
 
+{% block Links %}
+<li><a href="/" class="activeNavlink standartLink nav-link px-2 text-white">Home</a></li>
+<li><a href="/forum" class=" standartLink nav-link px-2 text-white">Forum</a></li>
+<li><a href="/aboutUs" class=" standartLink nav-link px-2 text-white">About Us</a></li>
+<li><a href="/comments" class=" standartLink nav-link px-2 text-white">Comments</a></li>
+{% endblock Links %}
+
+{% block LinksReg%}
+<a href="/login"><button type="button" href="" class=" standartLink btn btn-outline-light me-2">Login</button></a>
+<a href="/register"><button type="button" href="" class=" standartLink btn btn-warning">Sign-up</button></a>
+{% endblock LinksReg%}
+
 {% block content %}
-
-   <div id="home" class=" container home">
-        <h1 class="text-warning text-center" style="font-size: 80px; padding-top: 150px;">LOGIN TO SEND MASSAGE ON FORUMXT</h1> -->
-        <a href="/login" style="text-decoration: none;"><button type="button" style="font-size: 40px; margin-top: 50px;z-index: 1;padding: 10px 175px;" class=" d-block mx-auto btn btn-outline-light">Login</button></a>
-        <a href="/reg" style="text-decoration: none;"><button type="button" style="font-size: 40px; padding: 20px 100px;" class="my-3 d-block mx-auto btn btn-warning">Sign-up</button></a>
-        <div id="homewrapper" class="homewrapper">
-
+    
+        <div id="home" class=" container home">
+                <h1 class="text-warning text-center" style="font-size: 80px; padding-top: 150px;">LOGIN TO SEND MASSAGE ON FORUMXT</h1>
+                {% if not user.is_authenticated%}
+                    <a href="/login" style="text-decoration: none;"><button type="button" style="font-size: 40px; margin-top: 50px;z-index: 1;padding: 10px 175px;" class=" d-block mx-auto btn btn-outline-light">Login</button></a>
+                    <a href="/reg" style="text-decoration: none;"><button type="button" style="font-size: 40px; padding: 20px 100px;" class="my-3 d-block mx-auto btn btn-warning">Sign-up</button></a>
+                {% else%}
+                <a href="/comments" style="text-decoration: none;"><button type="button" style="font-size: 40px; margin-top: 50px;z-index: 1;padding: 10px 100px;" class=" d-block mx-auto btn btn-outline-light">Start correspond</button></a>
+                {% endif%}    
+                <div id="homewrapper" class="homewrapper"></div>
         </div>
-   </div>
+    
+        
+    
 
 {% endblock content %}
 

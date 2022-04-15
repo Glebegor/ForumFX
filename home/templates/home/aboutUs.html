@@ -2,8 +2,20 @@
 
 
 {% block title %}
-
+    About Us
 {% endblock title %}
+
+{% block Links %}
+<li><a href="/" class=" standartLink nav-link px-2 text-white">Home</a></li>
+<li><a href="/forum" class=" standartLink nav-link px-2 text-white">Forum</a></li>
+<li><a href="/aboutUs" class="activeNavlink standartLink nav-link px-2 text-white">About Us</a></li>
+<li><a href="/comments" class=" standartLink nav-link px-2 text-white">Comments</a></li>
+{% endblock Links %}
+
+{% block LinksReg%}
+<a href="/login"><button type="button" href="" class=" standartLink btn btn-outline-light me-2">Login</button></a>
+<a href="/register"><button type="button" href="" class=" standartLink btn btn-warning">Sign-up</button></a>
+{% endblock LinksReg%}
 
 {% block content %}
 <div class="container">

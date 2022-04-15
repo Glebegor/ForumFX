@@ -5,13 +5,25 @@
     Comments
 {% endblock title %}
 
+{% block Links %}
+<li><a href="/" class=" standartLink nav-link px-2 text-white">Home</a></li>
+<li><a href="/forum" class=" standartLink nav-link px-2 text-white">Forum</a></li>
+<li><a href="/aboutUs" class=" standartLink nav-link px-2 text-white">About Us</a></li>
+<li><a href="/comments" class="activeNavlink standartLink nav-link px-2 text-white">Comments</a></li>
+{% endblock Links %}
+
+{% block LinksReg%}
+<a href="/login"><button type="button" href="" class=" standartLink btn btn-outline-light me-2">Login</button></a>
+<a href="/register"><button type="button" href="" class=" standartLink btn btn-warning">Sign-up</button></a>
+{% endblock LinksReg%}
+
 {% block content %}
 <div class="container" style="min-height: 520px;">
     <form class="text-light formGroupComm" method="post">
         {% csrf_token %}
         {{ form }}
         <br>
-        <button style="width: 6%!important;" class="btn btn-warning mb-5 mt-3 mx-auto" type="submit">submit</button>
+        <button style="" class="btn btn-warning mb-5 mt-3 mx-auto" type="submit">submit</button>
 
     </form>
     <div class="comments text-dark">

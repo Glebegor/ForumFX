@@ -2,17 +2,27 @@
 
 
 {% block title %}
-    My amazing site
+    My Profile
 {% endblock title %}
+
+{% block Links %}
+<li><a href="/" class=" standartLink nav-link px-2 text-white">Home</a></li>
+<li><a href="/forum" class=" standartLink nav-link px-2 text-white">Forum</a></li>
+<li><a href="/aboutUs" class=" standartLink nav-link px-2 text-white">About Us</a></li>
+<li><a href="/comments" class=" standartLink nav-link px-2 text-white">Comments</a></li>
+{% endblock Links %}
+
 
 {% block content %}
 
    <div id="home" class=" container home">
-    <h1 class="text-warning text-left" style="font-size: 24px; padding-top: 150px;">Your Name:</h1>
+    <h1 class="text-warning text-center" style="font-size: 80px; padding-top: 50px;">Your Profile</h1>
+    <h1 class="text-warning text-left" style="font-size: 24px; padding-top: 100px;">Your Name:</h1>
     <h5 class="text-light text-left" style="">{{ request.user }}</h1>
     <h1 class="text-warning text-left" style="font-size: 24px;">Your Email:</h1>
     <h5 class="text-light text-left" style="">{{ request.user.email }}</h1>   
 
+        <a href="/exit"><button type="button" href="" style="font-size: 30px;" class="mt-2 px-3 standartLink btn btn-danger">LOGOUT</button></a>
         <div id="homewrapper" class="homewrapper">
 
         </div>
